@@ -1,0 +1,89 @@
+:root
+{
+    --banner-height: 50px;
+    --button-height: 80px;
+    --compose-height: 160px;
+    --message-margin: 1em;
+    --nav-width: 25%;
+    --main-width: 45%;
+    --services-height: 160px;
+    --margin: 10px;
+    --corner-radii: 10px;
+}
+
+body {
+    background-image: url("city.jpg");
+    width: 100%;
+    position: absolute;
+    margin:0px;
+    height: 100%;
+}                                           
+
+
+.Clicker
+{
+    background-color: transparent;
+    border: transparent;
+    margin-top: var(--margin);
+    width: 100%;
+}
+
+.Clicker:active {
+    transform: translateY(4px);
+  }
+
+.computer
+{
+    width: 100%;
+}
+
+.Title
+{
+    margin: var(--margin);
+    text-align:center;
+    margin-bottom:0px;
+    font-size: 30px;
+    border:5px solid;
+    border-color: black;
+    border-radius:10px;
+    background-color: skyblue;
+    color:black;
+    width:80%;
+    max-height: var(--banner-height);
+    margin-left:10%;
+    font-family: cursive;
+}
+
+
+
+.numbers {
+    margin: auto;
+    text-align:center;
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+    font-size: 30px;
+    border:5px solid;
+    border-radius:10px;
+    background-color:white;
+    padding-top: 20px;
+    width:80%;
+    height:60px;    
+}
+
+nav
+{
+    background-color: rgba(76, 175, 80, 0.8);
+    width: var(--nav-width);
+    height: calc(100% - var(--banner-height) - var(--margin) - var(--margin) - var(--margin));
+    position: absolute;
+    top: calc( var(--banner-height) + var(--margin) + var(--margin));
+    border-bottom-right-radius: var(--corner-radii);
+    border-top-right-radius: var(--corner-radii);
+
+}
+
+h2
+{
+    font-family: cursive;
+    text-align: center;
+}

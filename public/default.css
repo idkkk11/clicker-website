@@ -1,0 +1,405 @@
+:root
+{
+    --banner-height: 50px;
+    --nav-width: 35%;
+    --shop-width: calc(100% - var(--space-between) - var(--nav-width));
+    --margin: 10px;
+    --corner-radii: 10px;
+    --space-between: 2%;
+    --shop-item-width: 20%;
+    --space-between-items: 5.5%;
+}
+
+body {
+    background-image: url("city.jpg");
+    width: 100%;
+    position: absolute;
+    margin:0px;
+    height: 100%;
+}
+
+
+
+/* ______ COMPUTER CLICKER SECTION ______ */
+
+.Clicker
+{
+    background-color: transparent;
+    border: transparent;
+    margin-top: var(--margin);
+    width: 70%;
+    margin-left: 15%;
+}
+
+.Clicker:active {
+    transform: translateY(4px);
+  }
+
+
+
+.Title
+{
+    margin: var(--margin);
+    text-align:center;
+    margin-bottom:0px;
+    font-size: 30px;
+    border:5px solid;
+    border-color: black;
+    border-radius:10px;
+    background-color: skyblue;
+    color:black;
+    width:80%;
+    max-height: var(--banner-height);
+    margin-left:10%;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.Money {
+    margin: auto;
+    text-align:center;
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+    font-size: 30px;
+    border:5px solid;
+    border-radius:10px;
+    background-color:white;
+    padding: 0px;
+    width:80%;
+    height:8%;    
+    font-family: cursive;
+}
+
+
+nav
+{
+    background-color: rgba(76, 175, 80, 0.8);
+    width: var(--nav-width);
+    height: calc(100% - var(--banner-height) - var(--margin) - var(--margin) - var(--margin));
+    position: absolute;
+    top: calc( var(--banner-height) + var(--margin) + var(--margin));
+    border-bottom-right-radius: var(--corner-radii);
+    border-top-right-radius: var(--corner-radii);
+    
+}
+
+h2 /*Money*/
+{
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+}
+
+
+/* ______ Shop Section ______*/
+
+
+.Shop
+{
+    background-color: rgba(00, 255, 255, 0.8);
+    height: calc(100% - var(--banner-height) - var(--margin) - var(--margin) - var(--margin));
+    position: absolute;
+    top: var(--banner-height);
+    width: calc(100% - var(--nav-width) - var(--space-between));
+    left: calc(var(--nav-width) + var(--space-between));
+    top: calc(var(--banner-height) + var(--margin) + var(--margin));
+    border-bottom-left-radius: var(--corner-radii);
+    border-top-left-radius: var(--corner-radii);
+    
+}
+
+h3 /*USED FOR SHOP TITLE*/
+{
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+h4 /*USED FOR SHOP ITEM TITLES*/
+{
+    color: black;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    margin: 0;
+}
+
+h5 /*USED FOR SHOP ITEM DESCRIPTIONS*/
+{
+    color: blue;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    margin: 0;
+}
+
+.Stuff
+{
+    width: 100%;
+}
+
+.NoMoney
+{
+    position: absolute;
+    width: 70%;
+    height: 25px;
+    background-color: white;
+    left: 5%;
+    border:5px solid;
+    border-radius:10px;
+    top: calc(var(--banner-height) + 50%);
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.SendScoreButton
+{
+    position: absolute;
+    width: 15%;
+    height: 35px;
+    background-color: white;
+    left: calc(5% + 75%);
+    border:5px solid;
+    border-radius:10px;
+    top: calc(var(--banner-height) + 50%);
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+/* _______________ SHOP ITEMS START HERE ________________ */
+
+.Leaderboard
+{
+    position: absolute;
+    left: 3%;
+    top: calc(var(--banner-height) + 52% + 50px);
+    width: 90%;
+
+}
+
+.LeaderboardTitle
+    {
+        position: absolute;
+        left: 80%;
+        top: calc(var(--banner-height) + 52% + 50px);
+        width: 17%;
+        font-family: cursive;
+        font-size: 20px;
+        text-align: center;
+    
+    }
+
+.Taunt
+{
+    font-size: 18px;
+}
+
+
+.Names
+{
+    border: black;
+    width: 40%;
+    position: absolute;
+    background-color: white;
+    font-family: 'Comic Sans MS', cursive;
+    border:5px solid;
+    border-top-left-radius:10px;
+    border-bottom-left-radius: 10px;
+    
+}
+
+.Moneys
+{
+    border: black;
+    background-color: white;
+    width: 40%;
+    position: absolute;
+    left: 40%;
+    font-family: 'Comic Sans MS', cursive;
+    border:5px solid;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+/* ______ Item 1: AutoClicker ______ */
+
+.AutoClickerArea /*OverallArea*/
+{
+    width: var(--shop-item-width);
+    margin: var(--margin);
+    position: absolute;
+    top: var(--banner-height);    
+}
+
+.AutoClickerButton /*Button*/
+{
+    background-color: transparent;
+    border: transparent;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.AutoClickerButton:active {
+    transform: translateY(4px);
+  }
+
+
+
+.AutoClickerBox /*WhiteBoxwithInfo*/
+{
+    text-align:left;
+    margin-bottom: 0px;
+    font-size: 12px;
+    border:5px solid;
+    border-radius:10px;
+    background-color:white;
+    padding-top: 2px; 
+}
+
+.AutoClickerDetails /*Text in Box*/
+{
+    word-wrap: break-word;
+    margin-top: 0px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* ______ Item 2: Employee ______ */
+
+.EmployeeArea /*OverallArea*/
+{
+    width: var(--shop-item-width);
+    margin: var(--margin);
+    position: absolute;
+    top: var(--banner-height);
+    left: calc(1 * (var(--shop-item-width) + var(--space-between-items)));
+    
+}
+
+.EmployeeButton /*Button*/
+{
+    background-color: transparent;
+    border: transparent;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.EmployeeButton:active {
+    transform: translateY(4px);
+  }
+
+
+
+.EmployeeBox /*WhiteBoxwithInfo*/
+{
+    text-align:left;
+    margin-bottom: 0px;
+    font-size: 12px;
+    border:5px solid;
+    border-radius:10px;
+    background-color:white;
+    padding-top: 2px; 
+}
+
+.EmployeeDetails /*Text in Box*/
+{
+    word-wrap: break-word;
+    margin-top: 0px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* ______ Item 3: Building ______ */
+
+.BuildingArea /*OverallArea*/
+{
+    width: var(--shop-item-width);
+    margin: var(--margin);
+    position: absolute;
+    top: var(--banner-height);
+    left: calc(2 * (var(--shop-item-width) + var(--space-between-items)));
+    
+}
+
+.BuildingButton /*Button*/
+{
+    background-color: transparent;
+    border: transparent;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.BuildingButton:active {
+    transform: translateY(4px);
+  }
+
+
+
+.BuildingBox /*WhiteBoxwithInfo*/
+{
+    text-align:left;
+    margin-bottom: 0px;
+    font-size: 12px;
+    border:5px solid;
+    border-radius:10px;
+    background-color:white;
+    padding-top: 2px; 
+}
+
+.BuildingDetails /*Text in Box*/
+{
+    word-wrap: break-word;
+    margin-top: 0px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* ______ Item 4: Factory ______ */
+
+
+.FactoryArea /*OverallArea*/
+{
+    width: var(--shop-item-width);
+    margin: var(--margin);
+    position: absolute;
+    top: var(--banner-height);
+    left: calc(3 * (var(--shop-item-width) + var(--space-between-items)));
+    
+}
+
+.FactoryButton /*Button*/
+{
+    background-color: transparent;
+    border: transparent;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.FactoryButton:active {
+    transform: translateY(4px);
+  }
+
+
+
+.FactoryBox /*WhiteBoxwithInfo*/
+{
+    text-align:left;
+    margin-bottom: 0px;
+    font-size: 12px;
+    border:5px solid;
+    border-radius:10px;
+    background-color:white;
+    padding-top: 2px; 
+}
+
+.FactoryDetails /*Text in Box*/
+{
+    word-wrap: break-word;
+    margin-top: 0px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 20px;
+    text-align: center;
+}

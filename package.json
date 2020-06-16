@@ -1,0 +1,23 @@
+{
+  "name": "project1",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Working Clicker App Test 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "clicker",
+    "work",
+    "idle",
+    "game"
+  ],
+  "author": "Michael W",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "sqlite3": "^4.2.0"
+  }
+}
