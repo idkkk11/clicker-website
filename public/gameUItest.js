@@ -13,16 +13,24 @@ gameUItest.init = function () {
     let BuildingPrice = 600;
     let Factory = 0;
     let FactoryPrice = 4000;
-    let name = "bob";
+    let CanSend = true;
     const multiplier = 1.15;
 
-    window.onload = function () {
-        name = prompt("What is your name");
+    //Gets the user's name in the opening of code
+    window.onload = function () {               //A function that runs when the webpage is loaded
+        name = prompt("What is your name");     //On load, the page asks for the user's name
+        if (name === "") {       //If the user enters a blank name, they
+            name = "Player" + Math.floor(Math.random() * 100000); //are given a random name
+        }
         const Title = document.getElementById("Title");
-        Title.innerHTML = "Work Work Work !!! - " + name + "'s Office";
+        Title.innerHTML = "Work Work Work !!! - " + name + "'s Office"; //Adds the user's name to the title.
     };
 
 /* ___________________ CODE FOR AUTOMATIC MONEY __________________________ */
+
+    /* This section of the code are functions that are run when the user has items purchased from
+    the shop. The shop item are items that will add the user's money. These functions add the user's money
+    with a set interval based on how many of the items they have. */
 
     const callingAutoClicker = function() {
         if (AutoClicker > 0) {
@@ -71,13 +79,24 @@ gameUItest.init = function () {
 
 
     /* _______________________ MAIN MONEY CLICKER ________________________ */
+    /* This little section of the code is the computer button that adds one pound for every click
+    the user does. It then updates the money shown on the screen. */
+
     document.getElementById("Clicker").onclick = function () {
         num += addition;
         const Money = document.getElementById("Money");
         Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
     };
 
+
     /* _______________________ BUYING SHOP ITEMS _________________________ */
+    /* This section of the code is for buying the shop items that are available in the screen. When an item
+    is purchased through a click, it adds the corresponding item into the users "inventory" represented by a
+    variable named after their respective item names. These functions also increase the price of the item
+    after it is purchased by the multiplier. It then calls the set interval function to generate money.
+
+    This section also imposes an else function that tells the users they cannot purchase the item when
+    they do not have enough money - displayed on the status bar below the shop items.*/
 
     document.getElementById("AutoClickerButton").onclick = function () {
         if (num>=AutoClickerPrice) {
@@ -163,10 +182,13 @@ gameUItest.init = function () {
     };
 
 
+    /* ________________________ SENDING SCORE AREA _______________________________ */
+    /* This section of the code is the part that sends the score from the client to the server. In this part
+    of the code, the score is received by the server as it processed for the leaderboard. A timeout is also set
+    to restrict the user from sending their score more than once every 5 minutes. When the user sends their score,
+    the leaderboard is emptied and is re-filled with the most updated values from the server's database to make sure
+    the user appears on the leaderboard - if they beat anyone in the top 5. */
 
-    let CanSend = true;
-
-    
     document.getElementById("SendScoreButton").addEventListener('click', async event => {
         if (CanSend === true) {
             const score = num;
@@ -202,7 +224,7 @@ gameUItest.init = function () {
 
         else {
             NoMoney.innerHTML = "Can Only Send Score Every 5 Minutes.";
-            setTimeout(function(){ NoMoney.innerHTML ="" }, 2000);
+            setTimeout(function(){ NoMoney.innerHTML ="" }, 300000);
         }
     }
     )
