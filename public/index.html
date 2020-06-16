@@ -1,11 +1,14 @@
-<html>
-    <head>
-        <title>Work Work Work!!!</title>
-        <link rel = "stylesheet" href = "default.css"/>
-        <script type="module" src="main.js"></script>
-    </head>
+<!doctype html>
+<html lang="en-gb">
+<meta charset="utf-8">
+<title>Work Work Work!!!</title>
+<link rel = "stylesheet" href = "default.css"/>
+<link rel="shortcut icon" href="favicon.png">
+<script type="module" src="main.js"></script>
+        
 
-    <section id = "Title" class = "Title">
+
+    <section id = "Title" class = "Title" role="main">
         Work Work Work !!!
     </section>
     
@@ -13,10 +16,15 @@
     <nav>
         
  
-            <img src="computer2.png" class="Clicker" id="Clicker"/>
+            <img 
+            src="computer2.png" 
+            class="Clicker" 
+            id="Clicker" 
+            tabindex="0"
+            alt="Computer Image">
 
     
-        <h2>Money:</h2>
+        <h1>Money:</h1>
     
         <section id = "Money" class = "Money">£0</section>
 
@@ -24,19 +32,24 @@
     </nav>
 
     <section id ="Shop" class ="Shop">
-       <h3>Shop</h3> 
+       <h2>Shop</h2> 
        
         <section id="Stuff" class="Stuff">
 
             <section class="AutoClickerArea">
 
        
-                    <img src="Autoclicker3.png" id="AutoClickerButton" class="AutoClickerButton"/>
+                    <img 
+                    src="Autoclicker3.png" 
+                    id="AutoClickerButton" 
+                    class="AutoClickerButton" 
+                    tabindex="0"
+                    alt= "Cursor Image"/>
               
             
                 <section id="AutoClickerBox" class="AutoClickerBox">
-                    <h4>AutoClicker</h4>
-                    <h5>Clicks once every 5 seconds. <br/>£0.2/second</h5>
+                    <h3>AutoClicker</h3>
+                    <h4>Clicks once every 5 seconds. <br/>£0.2/second</h4>
                     <section id="AutoClickerDetails" class="AutoClickerDetails">
                         Owned: 0 <br/>
                         Price: £10 <br/>
@@ -49,12 +62,17 @@
             <section class="EmployeeArea">
 
               
-                    <img src="employee3.png" id="EmployeeButton" class="EmployeeButton"/>
+                    <img 
+                    src="employee3.png" 
+                    id="EmployeeButton" 
+                    class="EmployeeButton" 
+                    tabindex="0"
+                    alt="Employee Image"/>
      
             
                 <section id="EmployeeBox" class="EmployeeBox">
-                    <h4>Employee</h4>
-                    <h5>Works for you. <br/>£1/second.</h5>
+                    <h3>Employee</h3>
+                    <h4>Works for you. <br/>£1/second.</h4>
                     <section id="EmployeeDetails" class="EmployeeDetails">
                         Owned: 0 <br/>
                         Price: £200 <br/>
@@ -67,12 +85,17 @@
             <section class="BuildingArea">
 
                
-                    <img src="building3.png" id="BuildingButton" class="BuildingButton"/>
+                    <img 
+                    src="building3.png" 
+                    id="BuildingButton" 
+                    class="BuildingButton" 
+                    tabindex="0"
+                    alt="Building Image"/>
                 
             
                 <section id="BuildingBox" class="BuildingBox">
-                    <h4>Building</h4>
-                    <h5>For your office needs. <br/>£5/second.</h5>
+                    <h3>Building</h3>
+                    <h4>For your office needs. <br/>£5/second.</h4>
                     <section id="BuildingDetails" class="BuildingDetails">
                         Owned: 0 <br/>
                         Price: £600 <br/>
@@ -85,12 +108,17 @@
             <section class="FactoryArea">
 
                 
-                    <img src="factory3.png" id="FactoryButton" class="FactoryButton"/>
+                    <img 
+                    src="factory3.png" 
+                    id="FactoryButton" 
+                    class="FactoryButton" 
+                    tabindex="0"
+                    alt="Factory Image"/>
                 
             
                 <section id="FactoryBox" class="FactoryBox">
-                    <h4>Factory</h4>
-                    <h5>Produce your own goods. <br/>£12/second.</h5>
+                    <h3>Factory</h3>
+                    <h4>Produce your own goods. <br/>£12/second.</h4>
                     <section id="FactoryDetails" class="FactoryDetails">
                         Owned: 0 <br/>
                         Price: £4000 <br/>
@@ -101,7 +129,7 @@
 
         
             <section id="NoMoney" class="NoMoney"></section>
-            <button id="SendScoreButton" class="SendScoreButton">Send Score</button>
+            <button id="SendScoreButton" class="SendScoreButton tabindex="0"">Send Score</button>
 
             <section id ="Leaderboard" class="Leaderboard">
                 <section id="Names" class="Names">Name</section>

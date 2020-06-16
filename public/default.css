@@ -82,7 +82,7 @@ nav
     
 }
 
-h2 /*Money*/
+h1 /*Money*/
 {
     font-family: 'Comic Sans MS', cursive;
     text-align: center;
@@ -106,7 +106,7 @@ h2 /*Money*/
     
 }
 
-h3 /*USED FOR SHOP TITLE*/
+h2 /*USED FOR SHOP TITLE*/
 {
     font-family: 'Comic Sans MS', cursive;
     font-size: 30px;
@@ -115,17 +115,19 @@ h3 /*USED FOR SHOP TITLE*/
     text-align: center;
 }
 
-h4 /*USED FOR SHOP ITEM TITLES*/
+h3 /*USED FOR SHOP ITEM TITLES*/
 {
     color: black;
     font-family: 'Comic Sans MS', cursive;
     text-align: center;
     margin: 0;
+    font-size: 14px;
 }
 
-h5 /*USED FOR SHOP ITEM DESCRIPTIONS*/
+h4 /*USED FOR SHOP ITEM DESCRIPTIONS*/
 {
-    color: blue;
+    color: navy;
+    font-size: 10px;
     font-family: 'Comic Sans MS', cursive;
     text-align: center;
     margin: 0;
