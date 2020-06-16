@@ -216,7 +216,6 @@ gameUItest.init = function () {
         for (var item of data) {
             const name = document.createElement('div');
             const money = document.createElement('div');
-            Leaderboard = document.getElementById("Leaderboard");
             Names = document.getElementById("Names");
             Moneys = document.getElementById("Moneys");
 
