@@ -193,8 +193,8 @@ gameUItest.init = function () {
         Names = document.getElementById("Names");
         Moneys = document.getElementById("Moneys");
 
-        Names.textContent = "";
-        Moneys.textContent = "";
+        Names.textContent = "Name";
+        Moneys.textContent = "Money";
 
         getData();
 
