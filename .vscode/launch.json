@@ -11,6 +11,18 @@
         "preferences": {
           "security.fileuri.strict_origin_policy": false
         }
+      },
+      {
+        "name": "Mocha Tests",
+        "type": "firefox",
+        "request": "launch",
+        "reAttach": true,
+        "reloadOnAttach": true,
+        "file": "${fileDirname}/test.html",
+        "preferences": {
+          "security.fileuri.strict_origin_policy": false
+        },
+        "clearConsoleOnReload": true
       }
     ]
   }

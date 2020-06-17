@@ -82,12 +82,15 @@ gameUItest.init = function () {
     /* This little section of the code is the computer button that adds one pound for every click
     the user does. It then updates the money shown on the screen. */
 
-    document.getElementById("Clicker").onclick = function () {
+
+
+    const getMoney = function () {
         num += addition;
         const Money = document.getElementById("Money");
         Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
     };
 
+    document.getElementById("Clicker").addEventListener("click", getMoney);
 
     /* _______________________ BUYING SHOP ITEMS _________________________ */
     /* This section of the code is for buying the shop items that are available in the screen. When an item
