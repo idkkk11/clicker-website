@@ -3,23 +3,21 @@ import Ajax from "./Ajax.js";
 
 const gameUItest = Object.create(null);
 
-
-
 gameUItest.init = function () {
 
     //VariableDeclaration
     let num = 0;                //Variable used to maintain the user's money
     let AutoClicker = 0;        //Initialises the amount of AutoClickers the user owns to 0
-    let AutoClickerPrice = 10;  //Initialises the price of the AutoClicker to 10
-    let EmployeePrice = 200;    //Initialises the price of the Employee to 200
     let Employee = 0;           //Initialises the amount of Employees the user owns to 0
     let Building = 0;           //Initialises the amount of Buildings the user owns to 0
-    let BuildingPrice = 600;    //Initialises the price of the Building to 600
     let Factory = 0;            //Initialises the amount of Factories the user owns to 0
+    let AutoClickerPrice = 10;  //Initialises the price of the AutoClicker to 10
+    let EmployeePrice = 200;    //Initialises the price of the Employee to 200
+    let BuildingPrice = 600;    //Initialises the price of the Building to 600
     let FactoryPrice = 4000;    //Initialises the price of the Factory to 4000
     let CanSend = true;         //A boolean that determines whether the user can send their score
     const addition = 1;         //Constant used to add the user's money
-    const multiplier = 1.15;
+    const multiplier = 1.15;    //Multiplier to update the price of the shop items.
 
     //Gets the user's name in the opening of code
     window.onload = function () {               //A function that runs when the webpage is loaded
@@ -54,7 +52,7 @@ gameUItest.init = function () {
             function EmployeeMechanism() {
                 num += addition;
                 const Money = document.getElementById("Money");
-                Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
+                Money.innerHTML = "£" + num;
             }
         }
     };
@@ -65,7 +63,7 @@ gameUItest.init = function () {
             function BuildingMechanism() {
                 num += addition;
                 const Money = document.getElementById("Money");
-                Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
+                Money.innerHTML = "£" + num;
             }
         }
     };
@@ -76,7 +74,7 @@ gameUItest.init = function () {
             function FactoryMechanism() {
                 num += addition;
                 const Money = document.getElementById("Money");
-                Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
+                Money.innerHTML = "£" + num;
             }
         }
     };
@@ -92,9 +90,10 @@ gameUItest.init = function () {
     const getMoney = function () {
         num += addition;
         const Money = document.getElementById("Money");
-        Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
+        Money.innerHTML = "£" + num;
     };
 
+    //Calls the getMoney function when the Clicker image is clicked
     document.getElementById("Clicker").addEventListener("click", getMoney);
 
     /* _______________________ BUYING SHOP ITEMS _________________________ */
@@ -107,17 +106,17 @@ gameUItest.init = function () {
     they do not have enough money - displayed on the status bar below the shop items.*/
 
     const BuyAutoClicker = function () {
-        if (num>=AutoClickerPrice) {
-            num = num - AutoClickerPrice;
-            AutoClickerPrice = Math.round(AutoClickerPrice * multiplier);
-            AutoClicker += 1;
-            const AutoClickerDetails = document.getElementById("AutoClickerDetails");
+        if (num>=AutoClickerPrice) { //validates that the user has enough money to purchase the product
+            num = num - AutoClickerPrice;   //reduces the amount of money the user has
+            AutoClickerPrice = Math.round(AutoClickerPrice * multiplier);   //increase the price of the shop item
+            AutoClicker += 1;   //increase the user's item inventory by 1
+            const AutoClickerDetails = document.getElementById("AutoClickerDetails");   //used for updating display
             AutoClickerDetails.innerHTML = "Owned: " + AutoClicker + "<br/>" + "Price: £" + AutoClickerPrice;
             const Money = document.getElementById("Money");
-            Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
-            callingAutoClicker();
+            Money.innerHTML = "£" + num;
+            callingAutoClicker(); //calls the item to automatically increase the user's money
         }
-        else {
+        else { //else function to inform the user that they have not enough money
             AutoClickerDetails.innerHTML = "Owned: " + AutoClicker + "<br/>" + "Price: £" + AutoClickerPrice;
             const NoMoney = document.getElementById("NoMoney");
             NoMoney.innerHTML = "Not Enough Money to Make Purchase";
@@ -134,7 +133,7 @@ gameUItest.init = function () {
             const EmployeeDetails = document.getElementById("EmployeeDetails");
             EmployeeDetails.innerHTML = "Owned: " + Employee + "<br/>" + "Price: £" + EmployeePrice;
             const Money = document.getElementById("Money");
-            Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
+            Money.innerHTML = "£" + num;
             callingEmployee();
         }
         else {
@@ -144,42 +143,40 @@ gameUItest.init = function () {
             setTimeout(function(){ NoMoney.innerHTML =""; }, 2000);
         }
     };
-    
+
     const BuyBuilding = function () {
-    
+
         if (num>=BuildingPrice) {
             num = num - BuildingPrice;
             BuildingPrice = Math.round(BuildingPrice * multiplier);
-            Building += 1
+            Building += 1;
             const BuildingDetails = document.getElementById("BuildingDetails");
             BuildingDetails.innerHTML = "Owned: " + Building + "<br/>" + "Price: £" + BuildingPrice;
             const Money = document.getElementById("Money");
-            Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
+            Money.innerHTML = "£" + num;
             callingBuilding();
         }
         else {
-            const BuildingDetails = document.getElementById("BuildingDetails");
             BuildingDetails.innerHTML = "Owned: " + Building + "<br/>" + "Price: £" + BuildingPrice;
             const NoMoney = document.getElementById("NoMoney");
             NoMoney.innerHTML = "Not Enough Money to Make Purchase";
             setTimeout(function(){ NoMoney.innerHTML =""; }, 2000);
         }
     };
-    
+
     const BuyFactory = function () {
-    
+
         if (num>=FactoryPrice) {
             num = num - FactoryPrice;
             FactoryPrice = Math.round(FactoryPrice * multiplier);
-            Factory += 1
+            Factory += 1;
             const FactoryDetails = document.getElementById("FactoryDetails");
             FactoryDetails.innerHTML = "Owned: " + Factory + "<br/>" + "Price: £" + FactoryPrice;
             const Money = document.getElementById("Money");
-            Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
+            Money.innerHTML = "£" + num;
             callingFactory();
         }
         else {
-            const FactoryDetails = document.getElementById("FactoryDetails");
             FactoryDetails.innerHTML = "Owned: " + Factory + "<br/>" + "Price: £" + FactoryPrice;
             const NoMoney = document.getElementById("NoMoney");
             NoMoney.innerHTML = "Not Enough Money to Make Purchase";
@@ -188,6 +185,7 @@ gameUItest.init = function () {
     };
 
 
+    //Event listeners to detect if the user has clicked the button to purchase an item
     document.getElementById("AutoClickerButton").addEventListener("click", BuyAutoClicker);
     document.getElementById("EmployeeButton").addEventListener("click", BuyEmployee);
     document.getElementById("BuildingButton").addEventListener("click", BuyBuilding);
@@ -203,40 +201,27 @@ gameUItest.init = function () {
 
     //document.getElementById("SendScoreButton").addEventListener('click', async event => {
     const SendScore = async function () {
-        if (CanSend === true) {
-            const score = num;
-            const Playername = name;
-            const data = { "Name": Playername, "Money": score };
-            const response = Ajax.query(data);
-        //     const options = {
-        //         method: 'POST',
-        //         headers: {
-        //         'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify(data)
-        // };
+        if (CanSend === true) {         //Makes sure the user is allowed to send to prevent overloading of database
+            const score = num;          //Takes the amount of money as the user's score
+            const Playername = name;    //Takes the name the user inputs in the beginning of the program
+            const data = { "Name": Playername, "Money": score };    //Takes the two and sets it as data
+            const response = Ajax.query(data);  //Sends the data to the server
 
-        // const response = await fetch('/api', options);
-        // const json = await response.json();
-        // console.log(json);
 
-        // NoMoney.innerHTML = "Score Sent.";
-        // setTimeout(function(){ NoMoney.innerHTML ="" }, 2000);
-
-        CanSend = false
-        setTimeout(function(){ CanSend = true }, 300000);
+        CanSend = false                 //Disallows users from sending data
+        setTimeout(function(){ CanSend = true }, 300000);   //Re-allows after 5 minutes
 
         const Names = document.getElementById("Names");
         const Moneys = document.getElementById("Moneys");
 
-        Names.textContent = "Name";
+        Names.textContent = "Name";     //Empties the leaderboard show
         Moneys.textContent = "Money";
 
-        getData();
-
+        getData();      //Re-shows the leaderboard shown. The leaderboard is updated everytime the user
+                        //sends a score
         }
 
-        else {
+        else {          //Displays message to tell the user they can only send score occasionally
             NoMoney.innerHTML = "Can Only Send Score Every 5 Minutes.";
             setTimeout(function(){ NoMoney.innerHTML ="" }, 300000);
         }
@@ -264,8 +249,7 @@ gameUItest.init = function () {
 
         }
     }
-
-    getData();
+    getData();      //Done to make sure leaderboard appears on launch
 }
 
 

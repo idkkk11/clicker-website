@@ -50,9 +50,8 @@ f.BuyAutoClicker = function (AutoClicker, AutoClickerPrice, num, multiplier) {
         AutoClickerPrice = Math.round(AutoClickerPrice * multiplier);
         AutoClicker += 1;
         return {AutoClicker, AutoClickerPrice, num, multiplier};
-
+    }
 };
-}
 
 f.BuyEmployee = function (Employee, EmployeePrice, num, multiplier) {
 
@@ -61,9 +60,8 @@ f.BuyEmployee = function (Employee, EmployeePrice, num, multiplier) {
         EmployeePrice = Math.round(EmployeePrice * multiplier);
         Employee += 1;
         return {Employee, EmployeePrice, num, multiplier};
-
+    }
 };
-}
 
 f.BuyBuilding = function (Building, BuildingPrice, num, multiplier) {
 
@@ -72,21 +70,18 @@ f.BuyBuilding = function (Building, BuildingPrice, num, multiplier) {
         BuildingPrice = Math.round(BuildingPrice * multiplier);
         Building += 1
         return {Building, BuildingPrice, num, multiplier};
-
     }
 };
 
 
 f.BuyFactory = function (Factory, FactoryPrice, num, multiplier) {
 
-
+    if (num>=BuildingPrice) {
         num = num - FactoryPrice;
         FactoryPrice = Math.round(FactoryPrice * multiplier);
         Factory += 1
         return {Factory, FactoryPrice, num, multiplier};
-
-    
-
+    }
 };
 
 export default Object.freeze(f);
