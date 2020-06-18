@@ -35,7 +35,9 @@ body {
     transform: translateY(4px);
   }
 
-
+.Clicker:hover {
+    cursor: pointer;
+}
 
 .Title
 {
@@ -54,6 +56,19 @@ body {
     font-family: 'Comic Sans MS', cursive;
 }
 
+
+nav
+{
+    background-color: rgba(76, 175, 80, 0.8);
+    width: var(--nav-width);
+    height: calc(100% - var(--banner-height) - var(--margin) - var(--margin) - var(--margin));
+    position: absolute;
+    top: calc( var(--banner-height) + var(--margin) + var(--margin));
+    border-bottom-right-radius: var(--corner-radii);
+    border-top-right-radius: var(--corner-radii);
+    
+}
+
 .Money {
     margin: auto;
     text-align:center;
@@ -69,18 +84,6 @@ body {
     font-family: cursive;
 }
 
-
-nav
-{
-    background-color: rgba(76, 175, 80, 0.8);
-    width: var(--nav-width);
-    height: calc(100% - var(--banner-height) - var(--margin) - var(--margin) - var(--margin));
-    position: absolute;
-    top: calc( var(--banner-height) + var(--margin) + var(--margin));
-    border-bottom-right-radius: var(--corner-radii);
-    border-top-right-radius: var(--corner-radii);
-    
-}
 
 h1 /*Money*/
 {
@@ -168,6 +171,10 @@ h4 /*USED FOR SHOP ITEM DESCRIPTIONS*/
     font-family: 'Comic Sans MS', cursive;
 }
 
+.SendScoreButton:hover {
+    cursor: pointer;
+}
+
 /* _______________ SHOP ITEMS START HERE ________________ */
 
 .Leaderboard
@@ -183,7 +190,7 @@ h4 /*USED FOR SHOP ITEM DESCRIPTIONS*/
     {
         position: absolute;
         left: 80%;
-        top: calc(var(--banner-height) + 52% + 50px);
+        top: calc(var(--banner-height) + 52% + 75px);
         width: 17%;
         font-family: cursive;
         font-size: 20px;
@@ -241,6 +248,10 @@ h4 /*USED FOR SHOP ITEM DESCRIPTIONS*/
     margin-left: 10%;
 }
 
+.AutoClickerButton:hover {
+    cursor: pointer;
+}
+
 .AutoClickerButton:active {
     transform: translateY(4px);
   }
@@ -287,6 +298,10 @@ h4 /*USED FOR SHOP ITEM DESCRIPTIONS*/
     margin-left: 10%;
 }
 
+.EmployeeButton:hover {
+    cursor: pointer;
+}
+
 .EmployeeButton:active {
     transform: translateY(4px);
   }
@@ -331,6 +346,10 @@ h4 /*USED FOR SHOP ITEM DESCRIPTIONS*/
     border: transparent;
     width: 80%;
     margin-left: 10%;
+}
+
+.BuildingButton:hover {
+    cursor: pointer;
 }
 
 .BuildingButton:active {
@@ -380,6 +399,9 @@ h4 /*USED FOR SHOP ITEM DESCRIPTIONS*/
     margin-left: 10%;
 }
 
+.FactoryButton:hover {
+    cursor: pointer;
+}
 .FactoryButton:active {
     transform: translateY(4px);
   }

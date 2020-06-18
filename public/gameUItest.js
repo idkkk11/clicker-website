@@ -1,19 +1,24 @@
+/*jslint es6*/
+import Ajax from "./Ajax.js";
+
 const gameUItest = Object.create(null);
+
+
 
 gameUItest.init = function () {
 
     //VariableDeclaration
-    let num = 0;
-    let addition = 1;
-    let AutoClicker = 0;
-    let AutoClickerPrice = 10;
-    let EmployeePrice = 200;
-    let Employee = 0;
-    let Building = 0;
-    let BuildingPrice = 600;
-    let Factory = 0;
-    let FactoryPrice = 4000;
-    let CanSend = true;
+    let num = 0;                //Variable used to maintain the user's money
+    let AutoClicker = 0;        //Initialises the amount of AutoClickers the user owns to 0
+    let AutoClickerPrice = 10;  //Initialises the price of the AutoClicker to 10
+    let EmployeePrice = 200;    //Initialises the price of the Employee to 200
+    let Employee = 0;           //Initialises the amount of Employees the user owns to 0
+    let Building = 0;           //Initialises the amount of Buildings the user owns to 0
+    let BuildingPrice = 600;    //Initialises the price of the Building to 600
+    let Factory = 0;            //Initialises the amount of Factories the user owns to 0
+    let FactoryPrice = 4000;    //Initialises the price of the Factory to 4000
+    let CanSend = true;         //A boolean that determines whether the user can send their score
+    const addition = 1;         //Constant used to add the user's money
     const multiplier = 1.15;
 
     //Gets the user's name in the opening of code
@@ -32,17 +37,17 @@ gameUItest.init = function () {
     the shop. The shop item are items that will add the user's money. These functions add the user's money
     with a set interval based on how many of the items they have. */
 
-    const callingAutoClicker = function() {
-        if (AutoClicker > 0) {
-            const AutoClickerTimer = window.setInterval(AutoClickMechanism, 5000);
+    const callingAutoClicker = function() { //Function declaration
+        if (AutoClicker > 0) {  //Makes sure the user "owns" an autoclicker
+            const AutoClickerTimer = window.setInterval(AutoClickMechanism, 5000); //Runs code below every 5 seconds
             function AutoClickMechanism() {
-                num += addition;
-                const Money = document.getElementById("Money");            
-                Money.innerHTML = "£" + num;    /* DISPLAYS IN PLACE*/
+                num += addition; //Adds 1 to the user's money for every Autoclicker owned
+                const Money = document.getElementById("Money");    //Gets the money element for update
+                Money.innerHTML = "£" + num;    // Updates the user's money
             }
         }
     };
-    
+
     const callingEmployee = function() {
         if (Employee > 0) {
             const EmployeeTimer = window.setInterval(EmployeeMechanism, 1000);
@@ -53,7 +58,7 @@ gameUItest.init = function () {
             }
         }
     };
-    
+
     const callingBuilding = function() {
         if (Building > 0) {
             const BuildingTimer = window.setInterval(BuildingMechanism, 1000);
@@ -101,11 +106,11 @@ gameUItest.init = function () {
     This section also imposes an else function that tells the users they cannot purchase the item when
     they do not have enough money - displayed on the status bar below the shop items.*/
 
-    document.getElementById("AutoClickerButton").onclick = function () {
+    const BuyAutoClicker = function () {
         if (num>=AutoClickerPrice) {
             num = num - AutoClickerPrice;
             AutoClickerPrice = Math.round(AutoClickerPrice * multiplier);
-            AutoClicker += 1
+            AutoClicker += 1;
             const AutoClickerDetails = document.getElementById("AutoClickerDetails");
             AutoClickerDetails.innerHTML = "Owned: " + AutoClicker + "<br/>" + "Price: £" + AutoClickerPrice;
             const Money = document.getElementById("Money");
@@ -113,20 +118,19 @@ gameUItest.init = function () {
             callingAutoClicker();
         }
         else {
-            const AutoClickerDetails = document.getElementById("AutoClickerDetails");
             AutoClickerDetails.innerHTML = "Owned: " + AutoClicker + "<br/>" + "Price: £" + AutoClickerPrice;
             const NoMoney = document.getElementById("NoMoney");
             NoMoney.innerHTML = "Not Enough Money to Make Purchase";
-            setTimeout(function(){ NoMoney.innerHTML ="" }, 2000);
+            setTimeout(function(){ NoMoney.innerHTML =""; }, 2000);
         }
     };
 
-    document.getElementById("EmployeeButton").onclick = function () {
+    const BuyEmployee = function () {
 
         if (num>=EmployeePrice) {
             num = num - EmployeePrice;
             EmployeePrice = Math.round(EmployeePrice * multiplier);
-            Employee += 1
+            Employee += 1;
             const EmployeeDetails = document.getElementById("EmployeeDetails");
             EmployeeDetails.innerHTML = "Owned: " + Employee + "<br/>" + "Price: £" + EmployeePrice;
             const Money = document.getElementById("Money");
@@ -134,16 +138,15 @@ gameUItest.init = function () {
             callingEmployee();
         }
         else {
-            const EmployeeDetails = document.getElementById("EmployeeDetails");
             EmployeeDetails.innerHTML = "Owned: " + Employee + "<br/>" + "Price: £" + EmployeePrice;
             const NoMoney = document.getElementById("NoMoney");
             NoMoney.innerHTML = "Not Enough Money to Make Purchase";
-            setTimeout(function(){ NoMoney.innerHTML ="" }, 2000);
+            setTimeout(function(){ NoMoney.innerHTML =""; }, 2000);
         }
     };
-
-    document.getElementById("BuildingButton").onclick = function () {
-
+    
+    const BuyBuilding = function () {
+    
         if (num>=BuildingPrice) {
             num = num - BuildingPrice;
             BuildingPrice = Math.round(BuildingPrice * multiplier);
@@ -159,12 +162,12 @@ gameUItest.init = function () {
             BuildingDetails.innerHTML = "Owned: " + Building + "<br/>" + "Price: £" + BuildingPrice;
             const NoMoney = document.getElementById("NoMoney");
             NoMoney.innerHTML = "Not Enough Money to Make Purchase";
-            setTimeout(function(){ NoMoney.innerHTML ="" }, 2000);
+            setTimeout(function(){ NoMoney.innerHTML =""; }, 2000);
         }
     };
-
-    document.getElementById("FactoryButton").onclick = function () {
-
+    
+    const BuyFactory = function () {
+    
         if (num>=FactoryPrice) {
             num = num - FactoryPrice;
             FactoryPrice = Math.round(FactoryPrice * multiplier);
@@ -180,9 +183,15 @@ gameUItest.init = function () {
             FactoryDetails.innerHTML = "Owned: " + Factory + "<br/>" + "Price: £" + FactoryPrice;
             const NoMoney = document.getElementById("NoMoney");
             NoMoney.innerHTML = "Not Enough Money to Make Purchase";
-            setTimeout(function(){ NoMoney.innerHTML ="" }, 2000);
+            setTimeout(function(){ NoMoney.innerHTML =""; }, 2000);
         }
     };
+
+
+    document.getElementById("AutoClickerButton").addEventListener("click", BuyAutoClicker);
+    document.getElementById("EmployeeButton").addEventListener("click", BuyEmployee);
+    document.getElementById("BuildingButton").addEventListener("click", BuyBuilding);
+    document.getElementById("FactoryButton").addEventListener("click", BuyFactory);
 
 
     /* ________________________ SENDING SCORE AREA _______________________________ */
@@ -192,31 +201,33 @@ gameUItest.init = function () {
     the leaderboard is emptied and is re-filled with the most updated values from the server's database to make sure
     the user appears on the leaderboard - if they beat anyone in the top 5. */
 
-    document.getElementById("SendScoreButton").addEventListener('click', async event => {
+    //document.getElementById("SendScoreButton").addEventListener('click', async event => {
+    const SendScore = async function () {
         if (CanSend === true) {
             const score = num;
             const Playername = name;
             const data = { "Name": Playername, "Money": score };
-            const options = {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-        };
+            const response = Ajax.query(data);
+        //     const options = {
+        //         method: 'POST',
+        //         headers: {
+        //         'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(data)
+        // };
 
-        const response = await fetch('/api', options);
-        const json = await response.json();
-        console.log(json);
+        // const response = await fetch('/api', options);
+        // const json = await response.json();
+        // console.log(json);
 
-        NoMoney.innerHTML = "Score Sent.";
-        setTimeout(function(){ NoMoney.innerHTML ="" }, 2000);
+        // NoMoney.innerHTML = "Score Sent.";
+        // setTimeout(function(){ NoMoney.innerHTML ="" }, 2000);
 
         CanSend = false
-        setTimeout(function(){ CanSend = true }, 1000);
+        setTimeout(function(){ CanSend = true }, 300000);
 
-        Names = document.getElementById("Names");
-        Moneys = document.getElementById("Moneys");
+        const Names = document.getElementById("Names");
+        const Moneys = document.getElementById("Moneys");
 
         Names.textContent = "Name";
         Moneys.textContent = "Money";
@@ -230,19 +241,20 @@ gameUItest.init = function () {
             setTimeout(function(){ NoMoney.innerHTML ="" }, 300000);
         }
     }
-    )
+
+    document.getElementById("SendScoreButton").addEventListener("click", SendScore);
 
 
 
     const getData = async function () {
         const response = await fetch ('/api');
         const data = await response.json();
-    
+
         for (var item of data) {
             const name = document.createElement('div');
             const money = document.createElement('div');
-            Names = document.getElementById("Names");
-            Moneys = document.getElementById("Moneys");
+            const Names = document.getElementById("Names");
+            const Moneys = document.getElementById("Moneys");
 
             name.textContent = `${item.Name}`;
             money.textContent =  `£ ${item.Money}`;
