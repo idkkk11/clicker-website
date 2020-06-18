@@ -1,9 +1,9 @@
 /*jslint es6*/
 import Ajax from "./Ajax.js";
 
-const gameUItest = Object.create(null);
+const gameUI = Object.create(null);
 
-gameUItest.init = function () {
+gameUI.init = function () {
 
     //VariableDeclaration
     let num = 0;                //Variable used to maintain the user's money
@@ -254,4 +254,4 @@ gameUItest.init = function () {
 
 
 
-export default Object.freeze(gameUItest);
+export default Object.freeze(gameUI);

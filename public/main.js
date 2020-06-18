@@ -1,7 +1,7 @@
-import gameUItest from "./gameUItest.js";
+import gameUI from "./gameUI.js";
 
 window.addEventListener("DOMContentLoaded", function () {
-    gameUItest.init();
+    gameUI.init();
 });
 
 

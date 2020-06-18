@@ -10,20 +10,19 @@ For each section, write a maximum of 200 words.
 This app, inspired by Orteil's "Cookie Clicker", is a game that was developed for the Computing 2 assignment. During the release of the assignment, I was playing the Cookie Clicker game due to its addicting nature. This web app has the same concept with different elements. Additionally, this WebApp - a game - also implements a
 leaderboard to allow users to compete for the top scorers.
 
-With this web app, I aspire to accomplish creating a game that is addicting to the user and allow users to
-compete for the highest score.
+This web app is a game that aspires to be an addicting clicker game. The app allows the user to click the computer image, adding the users money by £1 for every click. The user can then buy items in the shop to boost their money as the items give the user a certain amount of money every second, depending on what item and how many of it they have. As the user's assets grow, they will earn money at a faster rate. The user can compete with other users by sending their score to the leaderboard.
 
 ## Coding
 *Highlight your approach to coding in this project.*
 
 The javascript source code of this project is mostly consisted of functions. The structure of the code is relatively dense but simple to understand and does not make use of classes or methods. In this program, the declared variables, declared with let, are processed in the fuctions. The global variables are changed within the functions as the history of the variables are not of any use. 
 
-Asynchronous code is used in processing the server data when the user sends and receives the scores to and from the server to update the leaderboard. This is done in order to assure that data is being sent back and forth. The source code also makes extensive use of setTimeout and setInterval in order to achieve the needs of the user and server. 
+Asynchronous code is used through callbacks in processing the server data when the user sends and receives the scores to and from the server and its database to update the leaderboard. This is done in order to assure that data is being sent back and forth. The source code also makes extensive use of setTimeout and setInterval in order to achieve the needs of the user and server. DOMContentLoaded is also made use of to make sure all elements of the html is loaded, ensuring all the event loaders and the entire program in general works.
 
 ## UX/UI
 *Outline the key elements of your UX/UI design.*
 
-The user is presented with large buttons and text to allow for easy reading. Texts are also put in white background in most places of the code for maximum contrast when reading. Buttons are also labelled to familiarise users with the interface of the game. A status bar is also available to allow the users to see a few updates for added assurance.
+The user is presented with large buttons and text to allow for easy reading. Texts are also put in white background in most places of the code for maximum contrast when reading. Buttons also change the cursor on hover to familiarise users with the interface of the game. A status bar is also available to allow the users to see a few updates for added assurance.
 
 The UI of this game is loaded when all the HTML content is loaded. This allows all the functions to work as intended without disturbing the users' experience when playing the game. 
 
@@ -32,6 +31,9 @@ The interaction between users arise in the use of the leaderboard in the game. T
 ## Data
 *Explain how you structure and process your data.*
 
+There is a database file which consists of users' scores and names.
+
+When the game is launched, the database loads the top 5 players from the database.
 In the program, when the user clicks the "Send Score" Button, the score they have achieved is sent to the server.
 During this period in time, the server adds the user's score into the database and re-manipulates the data.
 
@@ -47,7 +49,7 @@ After reading on it, it is fixed by adding DOMContentLoaded to make sure the HTM
 
 Problem 2.
 Uncaught (in promise) ReferenceError: assignment to undeclared variable item
-This problem from line 253 of the UI file, for(var item of data), arose which led to the leaderboard not showing. It was fixed by adding var in front of item of data.
+This problem from line 238 of the UI file, for(var item of data), arose which led to the leaderboard not showing. It was fixed by adding var in front of item of data.
 
 Problem 3.
 Uncaught ReferenceError: can't access lexical declaration 'callingFactory' before initialization
